@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         main.addView(new Bola(this, 100, 100, 40));
         main.addView(new Quadrado(this, 50, 25, 10, 20));
         main.addView(new Reta(this,5,5,6,10));
+        main.addView(new Oval(this,80,180,120, 150));
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     View vi = main.getChildAt(i);
                     View vf = main.getChildAt(i);
                     View vr = main.getChildAt(i);
+                    View vu = main.getChildAt(i);
                     if (vi instanceof Bola) {
                         main.removeViewAt(i);
                     }
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
                         main.removeViewAt(i);
                     }
                     if (vr instanceof Reta){
+                        main.removeViewAt(i);
+                    }
+                    if (vu instanceof Oval){
                         main.removeViewAt(i);
                     }
                 }
@@ -62,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 main.addView(new Quadrado(this,event.getX(),event.getX()+100 , event.getY(), event.getY()+100));
 
                 main.addView(new Reta(this, event.getX()+200, event.getY()+200,event.getX()+400, event.getY()+200 ));
+
+                main.addView (new Oval(this,event.getX()+300, event.getY()+200,event.getX()+600, event.getY()+300));
 
                 return true;
 
